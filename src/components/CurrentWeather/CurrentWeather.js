@@ -24,12 +24,12 @@ class CurrentWeather extends Component {
     render() {
         return (
             <div>
-            <h2>{this.state.currentData.temp_f}</h2>
-            
-            
-            
+                <h2>{this.state.currentData.temp_f}</h2>
+
+
+
             </div>
-    )
+        )
     }
 
 }

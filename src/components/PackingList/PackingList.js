@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayList from './DisplayList'
 
 class PackingList extends Component {
     constructor() {
@@ -9,6 +10,7 @@ class PackingList extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.clicked = this.clicked.bind(this)
     }
 
     handleChange(e) {
@@ -17,20 +19,31 @@ class PackingList extends Component {
         })
     }
 
+    clicked() {
+        this.setState({
+            input: '',
+            display: [...this.state.display, this.state.input]
+        })
+    }
+
 
     render() {
         let displayItems = this.state.display.map((e, i) => {
-            return  <h3 key={i}> {e} </h3>
+            return <DisplayList key={i} item={e} />
         })
         return (
             <div>
-                <input placeholder='What Are You Bringing?' onChange={this.handleChange} />
-                
+                <h4>Packing List</h4>
+                <div>
+                    <input placeholder='What Are You Bringing?' onChange={this.handleChange} />
+
+                    <button onClick={this.clicked}> Add Item </button>
+                </div>
+
+
                 {displayItems}
 
-
-
-            </div>
+            </div >
         )
     }
 
