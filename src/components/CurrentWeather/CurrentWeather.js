@@ -23,8 +23,8 @@ class CurrentWeather extends Component {
 
     render() {
         return (
-            <div>
-                <h2>{this.state.currentData.temp_f}</h2>
+            <div className='current-weather'>
+                <h2>The Current Weather is: {this.state.currentData.temp_f} °F</h2>
 
 
 

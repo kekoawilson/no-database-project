@@ -24,7 +24,8 @@ class WeatherButton extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.clicked}>The weather feels like: {this.state.currentData.feelslike_f}</button>
+                <button className='feels-btn' onClick={this.clicked}>The Weather Feels Like: </button>
+                <p>{this.state.currentData.feelslike_f} °F</p>
 
 
 

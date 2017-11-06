@@ -10,7 +10,8 @@ class PackingList extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.clicked = this.clicked.bind(this)
+        this.addItem = this.addItem.bind(this)
+        this.clearList = this.clearList.bind(this)
     }
 
     handleChange(e) {
@@ -19,17 +20,24 @@ class PackingList extends Component {
         })
     }
 
-    clicked() {
+    addItem() {
         this.setState({
             input: '',
             display: [...this.state.display, this.state.input]
         })
     }
 
+    clearList(arr) {
+        this.setState({
+            display: []
+        })
+    }
 
     render() {
         let displayItems = this.state.display.map((e, i) => {
-            return <DisplayList key={i} item={e} />
+            return (
+                    <DisplayList key={i} item={e} />
+            )
         })
         return (
             <div>
@@ -37,7 +45,8 @@ class PackingList extends Component {
                 <div>
                     <input placeholder='What Are You Bringing?' onChange={this.handleChange} />
 
-                    <button onClick={this.clicked}> Add Item </button>
+                    <button className='btn' onClick={this.addItem} > Add Item </button>
+                    <button className='btn' onClick={this.clearList}> Clear List </button>
                 </div>
 
 
