@@ -1,4 +1,16 @@
 
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-image: url('./images/landscape.png');
+  font-family: 'Varela Round', sans-serif; 
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+}
 
 p {
   text-align: center;
@@ -11,19 +23,6 @@ h2 {
 
 h4 {
   font-size: 25px;
-}
-
-#root {
-  height: 100vh;
-  width: 100vw;
-}
-
-body {
-  background-image: url('./images/landscape.png');
-  font-family: 'Varela Round', sans-serif; 
-  display: flex;
-  justify-content: flex-start;
-  height: 100vh;
 }
 
 .top-section {
@@ -80,13 +79,13 @@ input:focus {
   justify-content: center;
 }
 
-.weather-btn {
+.wear-btn {
   padding: 10px;
   border-style: hidden;
   font-size: 15px;
 }
 
-.weather-btn:focus{
+.wear-btn:focus{
   outline: none;
 }
 

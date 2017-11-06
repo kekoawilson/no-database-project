@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
-import WeatherButton from './components/WeatherButton/WeatherButton';
+import FeelsLike from './components/FeelsLike/FeelsLike';
 import PackingList from './components/PackingList/PackingList';
 import DbCall from './components/DbCall/DbCall';
 
@@ -39,7 +39,7 @@ class App extends Component {
         <section className='bottom-section'>
 
           <div className='l-top-div'>
-            <WeatherButton className='weather-button' updateCurrentWeather={this.updateCurrentWeather} />
+            <FeelsLike className='weather-button' updateCurrentWeather={this.updateCurrentWeather} />
           </div>
 
           <div className='l-bottom-div'>

@@ -43,7 +43,7 @@ class PackingList extends Component {
             <div>
                 <h4>Packing List</h4>
                 <div>
-                    <input placeholder='What Are You Bringing?' onChange={this.handleChange} />
+                    <input placeholder='What Are You Bringing?' value={this.state.input} onChange={this.handleChange} />
 
                     <button className='btn' onClick={this.addItem} > Add Item </button>
                     <button className='btn' onClick={this.clearList}> Clear List </button>

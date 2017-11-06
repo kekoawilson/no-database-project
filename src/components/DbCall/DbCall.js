@@ -79,15 +79,18 @@ class DbCall extends Component {
 
         return (
 
-                <div className='outside-display'>
-                <span className='button-span'><button className='weather-btn' onClick={this.display}> What To Wear </button></span>
-                    {this.state.data.cold ?
+            <div className='outside-display'>
+                <span className='button-span'><button className='wear-btn' onClick={this.display}> What To Wear </button></span>
+                {
+                    this.state.data.cold ?
                         this.display()
 
                         :
-                        <p>loading...</p>}
 
-                </div>
+                        null
+                }
+
+            </div>
         )
     }
 
