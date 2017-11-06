@@ -36,7 +36,7 @@ class PackingList extends Component {
     render() {
         let displayItems = this.state.display.map((e, i) => {
             return (
-                    <DisplayList key={i} item={e} />
+                <DisplayList key={i} item={e} />
             )
         })
         return (

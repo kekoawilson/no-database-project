@@ -105,14 +105,27 @@ input:focus {
   font-size: 12px;
 }
 
-.packing-list {
-
+.list {
+  font-size: 15px;
+  text-align: center;
 }
 
-.current-weather {
- 
+.outside-display {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.display-list {
+.import {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 
+.button-span {
+  text-align: center;
+  height: 50px;
+  width: 33vw;
 }

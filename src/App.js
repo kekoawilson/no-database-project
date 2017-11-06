@@ -3,11 +3,25 @@ import './App.css';
 import CurrentWeather from './components/CurrentWeather/CurrentWeather';
 import WeatherButton from './components/WeatherButton/WeatherButton';
 import PackingList from './components/PackingList/PackingList';
-import ApiCall from './components/ApiCall/ApiCall';
-import axios from 'axios';
+import DbCall from './components/DbCall/DbCall';
+
 
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      currentWeather: undefined
+    }
+    this.updateCurrentWeather = this.updateCurrentWeather.bind(this)
+  }
+
+  updateCurrentWeather(num) {
+    this.setState({
+      currentWeather: num * 1
+    })
+  }
+
   render() {
     return (
       <container>
@@ -25,7 +39,7 @@ class App extends Component {
         <section className='bottom-section'>
 
           <div className='l-top-div'>
-            <WeatherButton className='weather-button' />
+            <WeatherButton className='weather-button' updateCurrentWeather={this.updateCurrentWeather} />
           </div>
 
           <div className='l-bottom-div'>
@@ -33,7 +47,7 @@ class App extends Component {
           </div>
 
           <div className='right-column'>
-            <ApiCall />
+            <DbCall currentWeather={this.state.currentWeather} />
           </div>
 
         </section>

@@ -7,25 +7,25 @@ class WeatherButton extends Component {
         this.state = {
             currentData: ''
         }
-        // this.clicked = this.clicked.bind(this)
+        this.clicked = this.clicked.bind(this)
     }
 
-    // clicked() {
-    //     let promise = axios.get('http://api.wunderground.com/api/17766f4fe9817542/conditions/q/UT/Orem.json')
-    //     promise.then(res => {
-    //         this.setState({
-    //             currentData: res.data.current_observation
-    //         }) 
-    //         console.log(this.state)
-    //     })
-    // }
+    clicked() {
+        let promise = axios.get('http://api.wunderground.com/api/17766f4fe9817542/conditions/q/UT/Provo.json')
+        promise.then(res => {
+            this.setState({
+                currentData: res.data.current_observation.feelslike_f
+            })
+            this.props.updateCurrentWeather(res.data.current_observation.feelslike_f)
+        }).catch(console.log)
+    }
 
 
     render() {
         return (
             <div>
                 <button className='feels-btn' onClick={this.clicked}>The Weather Feels Like: </button>
-                <p>{this.state.currentData.feelslike_f} °F</p>
+                <p>{this.state.currentData} °F</p>
 
 
 
